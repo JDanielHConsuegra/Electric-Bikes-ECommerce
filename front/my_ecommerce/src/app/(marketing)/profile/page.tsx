@@ -54,9 +54,9 @@ export default function ProfilePage() {
       {orders.length === 0 ? (
         <section className="flex flex-col items-center justify-center w-full h-[60vh]">
           <div className="text-center m-6 shadow flex flex-col items-center justify-center bg-white rounded-md">
-            <h2 className="text-[1.2rem]">{user?.name}, usted no ha realizado ninguna orden</h2>
+            <h2 className="text-[1.2rem] p-6">{user?.name} usted no ha realizado ninguna orden</h2>
             <Link href="/">
-              <p className="bg-green-500 p-2 rounded-md text-white w-fit m-auto hover:bg-green-600 transition-all duration-300 cursor-pointer">
+              <p className="bg-green-500 mb-4 p-2 rounded-md text-white w-fit m-auto hover:bg-green-600 transition-all duration-300 cursor-pointer">
                 Inicio
               </p>
             </Link>

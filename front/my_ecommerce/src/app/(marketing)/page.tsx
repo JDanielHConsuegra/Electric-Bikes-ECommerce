@@ -4,12 +4,15 @@ import { IconText } from "@/components/iconText/IconText";
 import { TitleText } from "@/components/titleText/titleText";
 import { ClientCard } from "@/components/clientCard/clientCard";
 import { MissingProducts } from "@/components/MissingProducts/MissingProducts";
+import { MdElectricBolt } from 'react-icons/md';
+import { FaBatteryFull } from 'react-icons/fa';
+import { FaChargingStation } from 'react-icons/fa';
+import { GiPathDistance } from 'react-icons/gi';
+import { GiTakeMyMoney } from 'react-icons/gi';
 
 // Servicios y tipos
 import { getProducts } from "@/services/product";
 import { IProduct } from "@/types";
-
-
 
 // Página principal
 const Home: React.FC = async () => {
@@ -26,11 +29,11 @@ const Home: React.FC = async () => {
       {/* Iconos de características */}
       <div className="flex flex-wrap justify-center gap-4 m-10">
         {[
-          { icon: "https://evobike.com.co/cdn/shop/files/Group_48098574_160x160@2x.svg?v=1736344441", text: "100% Electrico" },
-          { icon: "https://evobike.com.co/cdn/shop/files/Group_48098549_160x160@2x.svg?v=1736344559", text: "Baterías Extraíbles" },
-          { icon: "https://evobike.com.co/cdn/shop/files/Group_48098550_160x160@2x.svg?v=1736344579", text: "Carga En Cualquier Lugar" },
-          { icon: "https://evobike.com.co/cdn/shop/files/Group_48098551_160x160@2x.svg?v=1736344615", text: "Recorre Largas Distancias" },
-          { icon: "https://evobike.com.co/cdn/shop/files/Group_48098552_160x160@2x.svg?v=1736344640", text: "Mejores Precios" },
+          { icon: <MdElectricBolt className="w-50 h-50 text-white border-4 bg-black p-8 rounded-full" />, text: "100% Electrico" },
+          { icon: <FaBatteryFull className="w-50 h-50 text-white border-4 bg-green-500 p-8 rounded-full" />, text: "Baterías Extraíbles" },
+          { icon: <FaChargingStation className="w-50 h-50 text-white border-4 bg-black p-6 rounded-full" />, text: "Carga En Cualquier Lugar" },
+          { icon: <GiPathDistance className="w-50 h-50 text-white border-4 bg-green-500 p-8 rounded-full" />, text: "Recorre Largas Distancias" },
+          { icon: <GiTakeMyMoney className="w-50 h-50 text-white border-4 bg-black p-8 rounded-full" />, text: "Mejores Precios" },
         ].map((item, index) => (
           <IconText key={index} icon={item.icon} text={item.text} />
         ))}

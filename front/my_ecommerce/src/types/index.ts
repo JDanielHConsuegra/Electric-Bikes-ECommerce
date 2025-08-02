@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import * as Yup from 'yup';
 
 // ---------- TIPOS DEL PERFIL DE USUARIO ----------
@@ -74,7 +75,7 @@ export interface IClientCardProps {
 }
 
 export interface IIconTextProps {
-  icon: string;
+  icon: JSX.Element | string;
   text?: string;
 }
 
