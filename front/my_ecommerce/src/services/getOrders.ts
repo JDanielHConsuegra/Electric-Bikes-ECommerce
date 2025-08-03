@@ -3,10 +3,10 @@
 import axios, { AxiosError } from "axios";
 
 export const getOrdersByUser = async (token: string) => {
-  const ApiOrder = "http://localhost:3002/users/orders";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
   try {
-    const res = await axios.get(ApiOrder, {
+    const res = await axios.get(`${API_BASE_URL}/users/orders`, {
       headers: {
         Authorization: token,
       },

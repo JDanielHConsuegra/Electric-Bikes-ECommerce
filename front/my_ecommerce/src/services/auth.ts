@@ -4,12 +4,11 @@ import { IUserLogin, IUserRegister } from "@/types";
 import axios, { AxiosError } from "axios";
 
 // URL de la API
-const API_BASE_URL = "http://localhost:3002/users";
-
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 // Registro de usuario
 export const postRegister = async (data: IUserRegister) => {
   try {
-    const res = await axios.post(`${API_BASE_URL}/register`, data);
+    const res = await axios.post(`${API_BASE_URL}/users/register`, data);
 
     if (res.status === 201) {
       return {
@@ -41,7 +40,7 @@ export const postRegister = async (data: IUserRegister) => {
 // Inicio de sesión
 export const postLogin = async (data: IUserLogin) => {
   try {
-    const res = await axios.post(`${API_BASE_URL}/login`, data);
+    const res = await axios.post(`${API_BASE_URL}/users/login`, data);
 
     if (res.status === 200) {
       return {

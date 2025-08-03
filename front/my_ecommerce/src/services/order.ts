@@ -4,11 +4,11 @@ import { ICreateOrder } from "@/types";
 import axios, { AxiosError } from "axios";
 
 export const postOrder = async (order: ICreateOrder, token: string) => {
-  const ApiOrder = "http://localhost:3002/orders";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
   console.log("order: ", order);
 
   try {
-    const res = await axios.post(ApiOrder, order, {
+    const res = await axios.post(`${API_BASE_URL}/orders`, order, {
       headers: {
         Authorization: token,
       },
