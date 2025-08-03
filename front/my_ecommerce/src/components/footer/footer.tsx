@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Img from "next/image";
 
 export const Footer = () => {
@@ -17,18 +16,18 @@ export const Footer = () => {
         <div className="w-full sm:w-1/2 lg:w-1/4">
           <h2 className="text-lg font-semibold mb-4">Recursos</h2>
           <div className="space-y-2 flex flex-col">
-            <Link href="/faq" passHref>
+            <div>
               <button className="text-left hover:underline">Preguntas Frecuentes</button>
-            </Link>
-            <Link href="/blog" passHref>
+            </div>
+            <div>
               <button className="text-left hover:underline">Blog</button>
-            </Link>
-            <Link href="/soporte" passHref>
+            </div>
+            <div>
               <button className="text-left hover:underline">Soporte</button>
-            </Link>
-            <Link href="/contacto" passHref>
+            </div>
+            <div>
               <button className="text-left hover:underline">Contacto</button>
-            </Link>
+            </div>
           </div>
         </div>
 
