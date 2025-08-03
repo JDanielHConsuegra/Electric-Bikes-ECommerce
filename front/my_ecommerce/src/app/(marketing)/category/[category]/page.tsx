@@ -1,3 +1,4 @@
+"use client";
 import { getProducts } from "@/services/product";
 import { ProductCard } from "@/components/productCard/productCard";
 import { TitleText } from "@/components/titleText/titleText";
@@ -5,18 +6,31 @@ import Link from "next/link";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { IProduct } from "@/types";
 import { MissingProducts } from "@/components/MissingProducts/MissingProducts";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Loading } from "@/components/loading";
 
-interface Props {
-  params: {
-    category: string;
-  };
-}
 
-export default async function ProductPage({ params }: Props) {
-  
-  //server-side fetching
-  const products: IProduct[]  = await getProducts();
+
+export default function ProductPage() {
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const params = useParams();
   const categoryId = Number(params.category);
+  useEffect(()=>{
+    const fetchProducts = async () => {
+      const productos: IProduct[]  = await getProducts();
+      setProducts(productos);
+      setLoading(false);
+    };
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <Loading text="Cargando productos..." />;
+  }
+
 
   //determina que productos se deben mostrar
   const productsToShow: IProduct[] = categoryId === 0 ? products : products?.filter(p => p.categoryId === categoryId);

@@ -17,7 +17,7 @@ import CloseIcon from "@mui/icons-material/Close";
 export const Navbar: React.FC<NavbarProps> = ({ items }) => {
   const pathname = usePathname();
   const { resetUserData, user, isAuth } = useAuthContext();
-  const { total, resetcart } = useCartContext();
+  const { total, resetCart } = useCartContext();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -82,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ items }) => {
                         autoClose: 2000,
                       });
                       resetUserData();
-                      resetcart();
+                      resetCart();
                     }
                   }}
                   className={`text-white text-lg ${isActive ? "font-bold underline" : ""}`}

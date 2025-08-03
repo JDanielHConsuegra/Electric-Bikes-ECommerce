@@ -26,7 +26,7 @@ export default function ProfilePage() {
       }
     };
     fetchUserOrders();
-  }, []);
+  }, [user, token, saveUserData]);
 
   // Si el usuario no está autenticado
   if (!isAuth) {
