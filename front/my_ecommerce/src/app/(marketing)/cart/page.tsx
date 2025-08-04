@@ -78,7 +78,7 @@ export default function ProfilePage() {
                 </span>
 
                 {/* Imagen del producto */}
-                <Link href={`/product/${product.id}`}>
+                <Link href={`/products/${product.id}`}>
                   <Image
                     src={product.image ?? "/images/no-image.png"}
                     alt={product.name ?? "Product Image"}

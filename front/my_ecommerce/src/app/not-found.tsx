@@ -1,5 +1,5 @@
 import { TitleText } from "@/components/titleText/titleText";
-import Image from "next/image";
+import { TbError404 } from 'react-icons/tb';
 import Link from "next/link";
 import { FC } from "react";
 
@@ -9,18 +9,12 @@ const NotFoundPage: FC = () => {
       
     <div className="flex flex-col justify-center items-center w-full h-screen bg-gray-100 text-center px-6">
       {/* Logo */}
-      <Image
-        src="/logo.avif"
-        alt="404 Not Found"
-        width={500}
-        height={500}
-        className="w-1/2 h-1/2 object-cover"
-      />
+      <TbError404 className="w-24 h-24 text-red-500 mb-4" />
 
       {/* Mensaje de error */}
       <div className="mt-6">
         <hr className="mb-4" />
-        <TitleText title="Página No Encontrada!" text="Error 404" />
+        <TitleText title="Página No Encontrada!"/>
         <hr className="mt-4 mb-6" />
 
         {/* Botón de regreso */}
@@ -28,7 +22,7 @@ const NotFoundPage: FC = () => {
           href="/"
           className="p-3 rounded-md bg-green-500 text-white font-bold font-mono text-2xl hover:bg-green-600 transition-all"
         >
-          Ir a la página de inicio
+          inicio
         </Link>
       </div>
     </div>
