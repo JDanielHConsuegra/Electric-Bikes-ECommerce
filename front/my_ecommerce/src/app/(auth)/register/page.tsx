@@ -19,9 +19,11 @@ const RegisterPage: React.FC = () => {
   const handleRegister = async (values: IUserRegister | IUserLogin) => {
     try {
       const res = await postRegister(values as IUserRegister);
+      console.log("Registro exitoso:", res);
+      
 
-      if (res.message === "Usuario Registrado exitosamente") {
-        toast.success("Usuario Registrado exitosamente");
+      if (res.message === "Usuario registrado exitosamente") {
+        toast.success(res.message);
         setTimeout(() => router.push("/login"), 3000);
         return;
       }
@@ -31,8 +33,8 @@ const RegisterPage: React.FC = () => {
         return;
       }
 
-      if (res.message === "Ese Usuario Ya existe, intenta con otro correo") {
-        toast.error("Ese Usuario Ya existe, intenta con otro correo");
+      if (res.message === "Ese usuario ya existe, intenta con otro correo") {
+        toast.error(res.message);
         return;
       }
 
@@ -41,7 +43,6 @@ const RegisterPage: React.FC = () => {
         return;
       }
 
-      toast.error("Error desconocido, por favor intente más tarde");
     } catch (error) {
       toast.error("Error al procesar la solicitud, por favor intente más tarde" + error);
     }

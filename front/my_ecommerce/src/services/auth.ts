@@ -18,7 +18,7 @@ export const postRegister = async (data: IUserRegister) => {
     } else {
       return {
         message: "Algo inesperado ha ocurrido al registrar el usuario",
-        error: res.data,
+        error: res.status,
       };
     }
   } catch (error) {
