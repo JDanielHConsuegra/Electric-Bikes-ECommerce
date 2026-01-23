@@ -45,6 +45,7 @@ function MarketingLayoutContent({ children }: { children: React.ReactNode }) {
     { label: "Inicio", href: "/" },
     { label: "Servicios", href: "/service" },
     { label: "Categorías", href: "/category" },
+    { label: "Landing", href: "/landing" },
     ...(isAuth
       ? [{ label: "Cerrar Sesión", href: "/" }]
       : [

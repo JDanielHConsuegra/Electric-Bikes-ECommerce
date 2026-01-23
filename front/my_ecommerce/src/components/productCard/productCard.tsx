@@ -22,7 +22,7 @@ export const ProductCard: React.FC<IProductCardProps> = ({ cards }) => {
       ) : (
         <p className=' m-auto w-27 font-bold text-white p-2 bg-red-600 text-center'>Agotado</p>
       )}
-      <Button content='More Details' href={`/products/${cards.id}`} />
+      <Button content='Mas detalles' href={`/products/${cards.id}`} />
     </section>
   );
 };

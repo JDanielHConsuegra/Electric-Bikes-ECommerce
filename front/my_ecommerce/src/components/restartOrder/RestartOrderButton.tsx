@@ -21,7 +21,7 @@ export const RestartOrderButton = () => {
     return(
         <div className='cursor-pointer w-5/10 flex flex-col items-center justify-center shadow hover:bg-gray-100 transition-all duration-300' onClick={handleClick}>
           <RestartAltTwoToneIcon fontSize='large'/>
-          <p className=' text-center font-bold' >Restart </p>
+          <p className=' text-center font-bold' >Reiniciar </p>
         </div>
     )
 }
