@@ -79,9 +79,9 @@ const RegisterPage: React.FC = () => {
                 .min(6, "Mínimo 6 caracteres")
                 .required("Campo obligatorio")
                 .matches(
-                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/,
-                  "Debe contener al menos una letra mayúscula, una minúscula y un número"
-                ),
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/,
+                "Debe contener al menos una letra mayúscula, una minúscula y un número"
+              ),
             },
             {
               name: "address",
