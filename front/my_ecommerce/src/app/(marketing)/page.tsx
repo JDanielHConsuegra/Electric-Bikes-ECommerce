@@ -45,7 +45,7 @@ const Home: React.FC = async () => {
       <hr className="m-10" />
 
       <div className="flex flex-wrap justify-center gap-4 m-10">
-        {products ? products.map((product, index) => <ProductCard cards={product} key={index} />) : <MissingProducts />}
+        {Array.isArray(products) ? products.map((product, index) => <ProductCard cards={product} key={index} />) : <MissingProducts />}
       </div>
 
       {/* Sección de testimonios */}
